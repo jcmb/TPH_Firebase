@@ -1,0 +1,12 @@
+[Unit]
+Description="TPH To Firebase"
+Wants=network-online,target
+After=network.target network-online,target
+
+[Service]
+ExecStart=/usr/local/bin/TPH_Firebase.py "--Location=Test System"
+StandardOutput=null
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
